@@ -4,4 +4,22 @@
 .header{
   height: 65px;
   background: $background-linear;
+  display: flex;
+  align-items: center;
+  padding-inline: 30px;
+  color: $text-primary;
+
+  img{
+    width: 40px;
+  }
+
+  h2{
+    margin-left: 15px;
+    flex: 1;
+  }
+
+  p{
+    margin-right: 20px;
+    font-weight: 600;
+  }
 }
