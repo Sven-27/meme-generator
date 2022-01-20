@@ -1,0 +1,39 @@
+@import 'styles/variables';
+
+.meme{
+  padding: 3rem;
+
+  .meme--form{
+    display: grid;
+    grid-template: 3.1rem 3.1rem / 1fr 1fr; 
+    gap: 1.1rem;
+
+      .meme--input{
+        height: 3rem;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid $border-primary;
+        background: none;
+        font-size: 1.3rem;
+        text-indent: 0.6rem;
+        color: $text-secondary;
+
+        &::placeholder{
+          color: $text-tertiairy;
+        }
+    }
+    .meme--btn{
+      grid-column: 1 / -1;
+      font-size: 1.3rem;
+      outline: none;
+      border: none;
+      background: $background-linear;
+      color: $text-primary;
+      border-radius: 8px;
+
+      .fa-hand-middle-finger{
+        margin-left: 0.7rem;
+      }
+    }
+  }
+}
