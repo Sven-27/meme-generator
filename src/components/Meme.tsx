@@ -59,14 +59,14 @@ const Meme = () => {
           <i className='fas fa-hand-middle-finger' />
         </button>
       </div>
-        <div className="meme--image-text">
+        <div className='meme--image-text'>
           <img 
             className='meme--random-image'
             src={ meme.randomImage } 
             alt='' 
           />
-          <h2 className="meme--text top">{ meme.topText }</h2>
-          <h2 className="meme--text bottom">{ meme.bottomText }</h2>
+          <h2 className='meme--text top'>{ meme.topText }</h2>
+          <h2 className='meme--text bottom'>{ meme.bottomText }</h2>
       </div>
     </main>
   )
