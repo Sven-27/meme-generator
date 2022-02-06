@@ -35,13 +35,13 @@ const Meme = () => {
           type='text' 
           className='meme--input' 
           name='input1' 
-          placeholder='Type something...' 
+          placeholder='Top Text' 
         />
         <input 
           type='text' 
           className='meme--input' 
           name='input2' 
-          placeholder='Type something else...' 
+          placeholder='Bottom Text' 
         />
         <button 
           className='meme--btn'
@@ -51,13 +51,15 @@ const Meme = () => {
           <i className='fas fa-hand-middle-finger' />
         </button>
       </div>
-        {
-           <img 
-              className='meme--random-image'
-              src={ meme.randomImage } 
-              alt='' 
-            />
-        }
+        <div className="meme--image-text">
+          <img 
+            className='meme--random-image'
+            src={ meme.randomImage } 
+            alt='' 
+          />
+          <h2 className="meme--text top">One does not Simply</h2>
+          <h2 className="meme--text bottom">Walk into Mordor</h2>
+      </div>
     </main>
   )
 }

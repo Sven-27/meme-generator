@@ -38,12 +38,48 @@
     }
   }
 
+  .meme--image-text{
+    position: relative;
+    margin-top: 3rem;
+
     .meme--random-image{
       height: 30rem;
       width: 100%;
       max-width: 1150px;
       object-fit: contain;
       margin: auto;
-      margin-top: 3rem;
+      
+      
     }
+
+    .meme--text{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: fantasy;
+      color: $text-primary;
+      font-size: 3rem;
+       text-shadow:
+        2px 2px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        0 2px 0 #000,
+        2px 0 0 #000,
+        0 -2px 0 #000,
+        -2px 0 0 #000;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 2rem 0;
+    }
+
+    .top{
+      top: 0;
+    }
+
+    .bottom{
+      bottom: 0;
+    }
+  }
+
 }
