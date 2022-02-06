@@ -11,9 +11,13 @@ const Meme = () => {
 
   const [ allMemeImages, setAllMemeImages ] = React.useState( MemesData )
 
-  // const getMeme = () => {
-  //   setMeme()
-  // }
+  const handleChange = (event: { target: HTMLInputElement }) => {
+    const { value, name } = event.target
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      [name]: value
+    }))
+  }
   
   const getMemeImage = () => {
     const memesArray = allMemeImages.data.memes
@@ -34,13 +38,17 @@ const Meme = () => {
         <input 
           type='text' 
           className='meme--input' 
-          name='input1' 
+          name='topText'
+          value={ meme.topText } 
           placeholder='Top Text' 
+          onChange={ handleChange }
         />
         <input 
           type='text' 
           className='meme--input' 
-          name='input2' 
+          name='bottomText'
+          value={ meme.bottomText } 
+          onChange={ handleChange }
           placeholder='Bottom Text' 
         />
         <button 
@@ -57,8 +65,8 @@ const Meme = () => {
             src={ meme.randomImage } 
             alt='' 
           />
-          <h2 className="meme--text top">One does not Simply</h2>
-          <h2 className="meme--text bottom">Walk into Mordor</h2>
+          <h2 className="meme--text top">{ meme.topText }</h2>
+          <h2 className="meme--text bottom">{ meme.bottomText }</h2>
       </div>
     </main>
   )
