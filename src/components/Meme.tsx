@@ -1,17 +1,32 @@
 import React from 'react'
 import '../styles/Meme.scss'
-import ModelObject from 'data/memesData'
+import MemesData from 'data/memesData'
 
-const Meme = () => {
-  const [ getRandomImage, setGetRandomImage ] = React.useState('')
-  console.log(ModelObject.data.memes)
+const Meme = () => {  
+  const [ meme, setMeme ] = React.useState({
+    topText: '',
+    bottomText: '',
+    randomImage: 'http://i.imgflip.com/1bij.jpg'
+  })  
+
+  const [ allMemeImages, setAllMemeImages ] = React.useState( MemesData )
+
+  // const getMeme = () => {
+  //   setMeme()
+  // }
   
-  const randomImage = () => {
-    const memesArray = ModelObject.data.memes
+  const getMemeImage = () => {
+    const memesArray = allMemeImages.data.memes
     const randomImage = Math.floor(Math.random() * memesArray.length)
     const url = memesArray[randomImage].url
-    setGetRandomImage(url)
+    setMeme(current => {
+      return {
+        ...current,
+        randomImage: url
+      }
+    })
   }
+  
 
   return (
     <main className='meme'>
@@ -30,17 +45,16 @@ const Meme = () => {
         />
         <button 
           className='meme--btn'
-          onClick={ randomImage }
+          onClick={ getMemeImage }
         >
           Get a new meme image 
           <i className='fas fa-hand-middle-finger' />
         </button>
       </div>
         {
-          getRandomImage &&
            <img 
               className='meme--random-image'
-              src={ getRandomImage } 
+              src={ meme.randomImage } 
               alt='' 
             />
         }
