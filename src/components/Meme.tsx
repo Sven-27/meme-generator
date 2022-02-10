@@ -9,7 +9,7 @@ const Meme = () => {
     randomImage: 'http://i.imgflip.com/1bij.jpg'
   })  
 
-  const [ allMemes, setAllMemes ] = React.useState<any>([])
+  const [ allMemes, setAllMemes ] = React.useState<Array<any>>([])
 
   React.useEffect(() => {
     fetch('https://api.imgflip.com/get_memes')
